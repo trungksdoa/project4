@@ -13,6 +13,8 @@
     <class>com.fptaptech.eproject4_RestfulAPI.model.DinnerTable</class>
     <class>com.fptaptech.eproject4_RestfulAPI.model.Seats</class>
     <class>com.fptaptech.eproject4_RestfulAPI.model.Decentralization</class>
+    <class>com.fptaptech.eproject4_RestfulAPI.model.Role</class>
+    <class>com.fptaptech.eproject4_RestfulAPI.model.Roles</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=coffee_man"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>

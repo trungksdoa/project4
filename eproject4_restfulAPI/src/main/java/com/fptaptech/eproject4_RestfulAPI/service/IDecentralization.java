@@ -5,22 +5,21 @@
  */
 package com.fptaptech.eproject4_RestfulAPI.service;
 
+import com.fptaptech.eproject4_RestfulAPI.model.Decentralization;
 import com.fptaptech.eproject4_RestfulAPI.model.Staff;
 import java.util.List;
 
 /**
  *
- * @author lenovo
+ * @author trung
  */
-public interface StaffService {
+public interface IDecentralization {
+    List<Decentralization> findAll();
 
-    List<Staff> findAllStaff();
+    void save(Decentralization staff);
 
-    void saveStaff(Staff staff);
+    void delete(Decentralization staff);
 
-    void delete(Staff staff);
+    Decentralization findOne(int id);
 
-    Staff findOneStaff(int id);
-
-    Staff Checklogin(Staff staff);
 }

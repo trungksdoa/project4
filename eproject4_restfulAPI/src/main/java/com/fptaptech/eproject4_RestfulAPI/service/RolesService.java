@@ -5,22 +5,17 @@
  */
 package com.fptaptech.eproject4_RestfulAPI.service;
 
-import com.fptaptech.eproject4_RestfulAPI.model.Staff;
+import com.fptaptech.eproject4_RestfulAPI.model.Roles;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  *
- * @author lenovo
+ * @author trung
  */
-public interface StaffService {
-
-    List<Staff> findAllStaff();
-
-    void saveStaff(Staff staff);
-
-    void delete(Staff staff);
-
-    Staff findOneStaff(int id);
-
-    Staff Checklogin(Staff staff);
+public interface RolesService {
+    List<Roles> findALl();
+    
+    Roles Update(Roles roles);
+    Roles findOneStaff(int id);
 }

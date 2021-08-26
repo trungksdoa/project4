@@ -18,13 +18,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface StaffRepository extends JpaRepository<Staff, String> {
 
     @Query("SELECT s FROM Staff s WHERE s.staffCode = :staffCode")
-    Staff findBycode(@PathVariable("staffCode") String staffCode);
+    Staff findBycode(@PathVariable("staffCode") int staffCode);
 
-    @Query("SELECT s FROM Staff s WHERE s.staffCode = :staffCode AND s.password = :password")
-    Staff CheckLogin(@PathVariable("staffCode") String staffCode, @PathVariable("password") String password);
+    @Query("SELECT s FROM Staff s WHERE s.username = :username AND s.password = :password")
+    Staff CheckLoginsres(@PathVariable("username") String username,@PathVariable("password") String password);
 
-//    default Staff CheckLogin(Staff staffCode) {
-//        return CheckLoginQuery(staffCode.getUsername(), staffCode.getPassword());
-//    }
-
+    default Staff CheckLogin(Staff staffCode) {
+        return CheckLoginsres(staffCode.getUsername(), staffCode.getPassword());
+    }
 }

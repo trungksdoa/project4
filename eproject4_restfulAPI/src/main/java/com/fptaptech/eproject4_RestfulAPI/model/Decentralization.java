@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author trung
  */
 @Entity
-@Table(name = "decentralization", catalog = "coffee_man", schema = "dbo")
+@Table(name = "decentralization")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Decentralization.findAll", query = "SELECT d FROM Decentralization d"),
@@ -42,7 +42,7 @@ public class Decentralization implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Integer id;
     @Column(name = "cancel_order")
     private Boolean cancelOrder;
@@ -56,10 +56,10 @@ public class Decentralization implements Serializable {
     private Boolean managerEmploy;
     @Column(name = "manager_customer")
     private Boolean managerCustomer;
-    @JoinColumn(name = "staff_id", referencedColumnName = "staff_code")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     @ManyToOne
     @JsonIgnore
-    private Staff staffId;
+    private Role roleId;
 
     public Decentralization() {
     }
@@ -124,12 +124,12 @@ public class Decentralization implements Serializable {
         this.managerCustomer = managerCustomer;
     }
 
-    public Staff getStaffId() {
-        return staffId;
+    public Role getRoleId() {
+        return roleId;
     }
 
-    public void setStaffId(Staff staffId) {
-        this.staffId = staffId;
+    public void setRoleId(Role roleId) {
+        this.roleId = roleId;
     }
 
     @Override

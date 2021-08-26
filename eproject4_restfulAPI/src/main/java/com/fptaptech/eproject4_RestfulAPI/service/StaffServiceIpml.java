@@ -32,7 +32,7 @@ public class StaffServiceIpml implements StaffService {
     }
 
     @Override
-    public Staff findOneStaff(String id) {
+    public Staff findOneStaff(int id) {
         return repository.findBycode(id);
     }
 
@@ -42,13 +42,10 @@ public class StaffServiceIpml implements StaffService {
     }
 
     @Override
-    public Staff CheckLogin(String Code,String password) {
-        Staff staff = repository.CheckLogin(Code, password);
-        if (repository.CheckLogin(Code, password) != null) {
-            return staff;
-        } else {
-            return null;
-        }
+    public Staff Checklogin(Staff staff) {
+      return  repository.CheckLogin(staff);
     }
+
+ 
 
 }
